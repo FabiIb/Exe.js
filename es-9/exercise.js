@@ -1,5 +1,5 @@
 function printName() {
-    helloName = "Hello John";
+   const helloName = "Hello John";
 
     function inner() {
         console.log(helloName)
