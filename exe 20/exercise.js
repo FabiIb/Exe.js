@@ -2,9 +2,6 @@ class Square {
   constructor(side) {
     this.side = side;
   }
-  area() {
-    return this.side * this.side;
-  }
 }
 
 class Rectangle {
@@ -12,23 +9,26 @@ class Rectangle {
     this.width = width;
     this.height = height;
   }
-  area() {
-    return this.width * this.height;
-  }
 }
 
 class Circle {
   constructor(radius) {
     this.radius = radius;
   }
-  area() {
-    return this.radius * this.radius * Math.PI;
-  }
 }
 
 class AreaCalculator {
   static calculate(figure) {
-    return figure.area();
+    if (figure instanceof Square) {
+      return figure.side * figure.side;
+    } 
+    else if (figure instanceof Rectangle) {
+      return figure.width * figure.height;
+    } 
+    else if (figure instanceof Circle) {
+      return Math.PI * figure.radius * figure.radius;
+    } 
+    else console.log("invalid figure");
   }
 }
 
